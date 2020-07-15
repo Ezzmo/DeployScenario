@@ -21,7 +21,7 @@ resource "aws_instance" "database" {
   ami = "ami-0a63f96e85105c6d3"
   instance_type = "t2.micro"
   subnet_id = "${aws_subnet.private.id}"
-  vpc_security_group_ids = "${aws_security_group..id}"
+  vpc_security_group_ids = "${aws_security_group.DB.id}"
   associate_public_ip_address = true
   key_name = "PracticeKey"
   provisioner "remote-exec" {
