@@ -23,7 +23,7 @@ resource "aws_security_group" "Front" {
 resource "aws_security_group" "DB" {
   name = "DB-SG"
   description = "Database security group"
-  vpc_id = "${aws_vpc.practice.id}"
+  vpc_id = aws_vpc.practice.id
   ingress {
     from_port = 22
     to_port = 22
